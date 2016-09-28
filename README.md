@@ -1,4 +1,4 @@
-# Electron + Three.js
+# Electron + Angular.js 株価リアルタイム表示アプリ
 by <http://someonesgarden.org>
 
 Electronを使ったデスクトップアプリケーションです。
