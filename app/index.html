@@ -1,0 +1,82 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <title>D3 + Electron</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/window.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- link rel="stylesheet" href="css/flex.css"-->
+
+    <script type="text/javascript" src="node_modules/three/build/three.min.js"></script>
+    <script type="text/javascript" src="node_modules/d3/build/d3.min.js"></script>
+    <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+</head>
+<body>
+
+<div class="window-bar">
+    <ul class="window-actions">
+        <li class="window-action-wrapper">
+            <a href="#" class="window-action window-action-minimize" title="Minimize"><span>Minimize</span></a></li>
+        <li class="window-action-wrapper window-action-wrapper-maximize">
+            <a href="#" class="window-action window-action-maximize" title="Maximize"><span>Maximize</span></a></li>
+        <li class="window-action-wrapper window-action-wrapper-restore">
+            <a href="#" class="window-action window-action-restore" title="Restore"><span>Restore</span></a></li>
+        <li class="window-action-wrapper window-action-wrapper-close">
+            <a href="#" class="window-action window-action-close" title="Close"><span>Close</span></a></li>
+    </ul>
+
+    <div class="vline window-actions"></div>
+
+    <p class="title window-actions">Stock checker</p>
+</div>
+
+
+<main>
+
+    <div class="header">
+
+        <div class="inside">
+            <a href="#" class="open-file">Open file</a>
+            &middot;
+            <a href="#" class="show-file-in-folder">Show file in folder</a>
+            &middot;
+            <a href="#" class="open-download">Open Downloads</a>
+
+            <a href="#" class="save-clip-file right hidden">Save Clipboard</a>
+            <a href="#" class="save-file right hidden">Save README.md</a>
+
+        </div>
+    </div>
+
+
+    <div class="container" ng-controller="myController">
+
+            <div class="thumb col-lg-3 col-md-3 col-sm-4 col-xs-6">
+                <div class="thumbnail">
+                    <p class="text-center bigword"> {{price}} </p>
+
+                    <div class="caption">
+                        <h4 class="text-center">{{title}}</h4>
+                        <p class="text-center date">{{getTime}} </p>
+
+                        <p class="text-center buttons">
+                            <a type="button" class="btn btn-default btn-block" role="button" ng-click="getPrice()">取得</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+</main>
+
+
+<script type="text/javascript" charset="utf-8" src="client/app.js"></script>
+<script type="text/javascript" charset="utf-8" src="client/platform.js"></script>
+<script type="text/javascript" charset="utf-8" src="client/window.js"></script>
+
+<script type="text/javascript" charset="utf-8" src="client/angular/main.js"></script>
+</body>
+</html>
